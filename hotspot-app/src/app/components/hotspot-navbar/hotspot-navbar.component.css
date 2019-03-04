@@ -1,0 +1,29 @@
+.navbar-brand img {
+    width:125px; /* you can use % */
+    height: auto;
+}
+
+.navbar {
+    background-color: white;
+}
+
+.navbar-text {
+    font-family: Lobster;
+    font-size: 24px;
+    color: #60b0f4;
+}
+
+.nav-item { 
+    font-family: Montserrat;
+    color: #e74c3c;
+}
+
+.btn-lg {
+    color:#e74c3c;
+    border-color: #e74c3c;
+}
+
+.btn-lg:hover {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}

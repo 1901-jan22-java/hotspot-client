@@ -6,6 +6,7 @@ import { HotspotNavbarComponent } from './components/hotspot-navbar/hotspot-navb
 import { HotspotFooterComponent } from './components/hotspot-footer/hotspot-footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { GreetingComponent } from './components/greeting/greeting.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { RegistrationComponent } from './components/registration/registration.co
     HotspotNavbarComponent,
     HotspotFooterComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    GreetingComponent
   ],
   imports: [
     BrowserModule

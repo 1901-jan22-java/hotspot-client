@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hotspot-navbar.component.css']
 })
 export class HotspotNavbarComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {

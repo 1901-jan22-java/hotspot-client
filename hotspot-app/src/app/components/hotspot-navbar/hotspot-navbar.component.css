@@ -10,20 +10,22 @@
 .navbar-text {
     font-family: Lobster;
     font-size: 24px;
-    color: #60b0f4;
+    color: #60B0F4;
 }
 
 .nav-item { 
     font-family: Montserrat;
-    color: #e74c3c;
+    color: #EF3E36;
 }
 
 .btn-lg {
-    color:#e74c3c;
-    border-color: #e74c3c;
+    color:#EF3E36;
+    border-color: #EF3E36;
+    font-weight: 400;
+    border-radius:3px;
 }
 
 .btn-lg:hover {
-    background-color: #e74c3c;
-    border-color: #e74c3c;
+    background-color: #EF3E36;
+    border-color: #EF3E36;
 }

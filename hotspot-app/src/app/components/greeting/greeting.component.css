@@ -1,0 +1,18 @@
+/* .enclosure {
+    margin-top: -16px;
+    background-color: #F6F6F9;  
+    width: 100%;
+} */
+
+h1 {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 64px;
+    color: #707070;
+}
+
+p {
+    font-family: lato;
+    font-size: 24px;
+    color: #707070;
+}

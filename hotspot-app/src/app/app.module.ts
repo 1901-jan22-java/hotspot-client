@@ -11,9 +11,7 @@ import { GreetingComponent } from './components/greeting/greeting.component';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClient } from 'selenium-webdriver/http';
-// import [AgmCoreModule] from '@agm/core'; 
-// import [HttpClientModule] from '@angualr/common/http'; 
-import {AgmCoreModule} from '@agm/core'
+import {AgmCoreModule} from '@agm/core';
 
 
 
@@ -32,7 +30,6 @@ import {AgmCoreModule} from '@agm/core'
      AgmCoreModule.forRoot({
        apiKey: 'AIzaSyB3FFEp0FSqB0PJRgCjB1wntTE9W3ZTk_c'
      })
-     
   ],
   providers: [],
   bootstrap: [AppComponent]

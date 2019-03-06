@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
+
 
 import { AppComponent } from './app.component';
 import { HotspotNavbarComponent } from './components/hotspot-navbar/hotspot-navbar.component';
@@ -7,6 +8,14 @@ import { HotspotFooterComponent } from './components/hotspot-footer/hotspot-foot
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { GreetingComponent } from './components/greeting/greeting.component';
+import { GoogleMapsComponent } from './google-maps/google-maps.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClient } from 'selenium-webdriver/http';
+// import [AgmCoreModule] from '@agm/core'; 
+// import [HttpClientModule] from '@angualr/common/http'; 
+import {AgmCoreModule} from '@agm/core'
+
+
 
 @NgModule({
   declarations: [
@@ -15,12 +24,19 @@ import { GreetingComponent } from './components/greeting/greeting.component';
     HotspotFooterComponent,
     LoginComponent,
     RegistrationComponent,
-    GreetingComponent
+    GreetingComponent,
+    GoogleMapsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+     AgmCoreModule.forRoot({
+       apiKey: 'AIzaSyB3FFEp0FSqB0PJRgCjB1wntTE9W3ZTk_c'
+     })
+     
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+export class AppModule {}

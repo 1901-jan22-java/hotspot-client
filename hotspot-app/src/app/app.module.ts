@@ -10,16 +10,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-
-// import [AgmCoreModule] from '@agm/core'; 
-// import [HttpClientModule] from '@angualr/common/http'; 
-import {AgmCoreModule} from '@agm/core'
-=======
 import { HttpClient } from 'selenium-webdriver/http';
 import {AgmCoreModule} from '@agm/core';
->>>>>>> 873c94e879f2ade9b0c125caa81d298e9ad51f81
 
 
 
@@ -38,11 +30,7 @@ import {AgmCoreModule} from '@agm/core';
     // libraries: ['geometry']
     HttpClientModule,  
      AgmCoreModule.forRoot({
-<<<<<<< HEAD
        apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo'
-=======
-       apiKey: '', // Insert application key here
->>>>>>> 873c94e879f2ade9b0c125caa81d298e9ad51f81
      })
   ],
   providers: [],

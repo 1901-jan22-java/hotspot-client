@@ -22,7 +22,6 @@ import { MapsService } from '../maps.service';
 
 export class GoogleMapsComponent {
   title = 'hotspot-app';
-<<<<<<< HEAD:hotspot-app/src/app/google-maps/google-maps.component.ts
   latitude: number = 40.742054;
   longitude: number = -73.769417;
 
@@ -40,14 +39,6 @@ export class GoogleMapsComponent {
       this.lng = data.longitude;
 
     })
-=======
-  latitude = 32.798476;
-  longitude = -117.248071;
-  OnL(event) {
-    console.log(event);
-    this.latitude = event.coords.lat;
-    this.longitude = event.coords.lng;
->>>>>>> 873c94e879f2ade9b0c125caa81d298e9ad51f81:hotspot-app/src/app/components/google-maps/google-maps.component.ts
   }
 
   

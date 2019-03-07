@@ -8,7 +8,7 @@ import { HotspotFooterComponent } from './components/hotspot-footer/hotspot-foot
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { GreetingComponent } from './components/greeting/greeting.component';
-import { GoogleMapsComponent } from './google-maps/google-maps.component';
+import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClient } from 'selenium-webdriver/http';
 import {AgmCoreModule} from '@agm/core';
@@ -28,7 +28,7 @@ import {AgmCoreModule} from '@agm/core';
   imports: [
     BrowserModule,
      AgmCoreModule.forRoot({
-       apiKey: // Insert application key here
+       apiKey: 'AIzaSyB3FFEp0FSqB0PJRgCjB1wntTE9W3ZTk_c', // Insert application key here
      })
   ],
   providers: [],

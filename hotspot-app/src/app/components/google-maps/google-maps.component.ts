@@ -11,26 +11,21 @@ import { ViewChild } from '@angular/core';
 })
 // export class GoogleMapsComponent implements OnInit {
 
-  
-
 //   constructor() { }
 
 //   ngOnInit() {
-
-    
 //   }
 
 // }
 
 export class GoogleMapsComponent {
   title = 'hotspot-app';
-  latitude: number = 32.798476;
-  longitude: number = -117.248071;
-  OnL(event){ 
-    console.log(event); 
-    this.latitude = event.coords.lat; 
+  latitude = 32.798476;
+  longitude = -117.248071;
+  OnL(event) {
+    console.log(event);
+    this.latitude = event.coords.lat;
     this.longitude = event.coords.lng;
-
   }
 }
 

@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hotspot-app';
-  latitude: number = 40.7362;
-  longitude: number = 73.8161;
-  onClk(event){ 
-    console.log(event); 
+  latitude = 40.7362;
+  longitude = 73.8161;
+  onClk(event){
+    console.log(event);
   }
 }

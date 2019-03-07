@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hotspot-app';
-  latitude: number = 40.7362;
-  longitude: number = 73.8161;
-  onClk(event){ 
-    console.log(event); 
-  }
+  // title = 'hotspot-app';
+  // latitude: number = 40.7362;
+  // longitude: number = 73.8161;
+  // onClk(event){ 
+  //   console.log(event); 
+  // }
 }

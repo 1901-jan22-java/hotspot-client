@@ -24,8 +24,8 @@ import { ViewChild } from '@angular/core';
 
 export class GoogleMapsComponent {
   title = 'hotspot-app';
-  latitude: number = 32.798476;
-  longitude: number = -117.248071;
+  latitude: number = 40.742054;
+  longitude: number = -73.769417;
   OnL(event){ 
     console.log(event); 
     this.latitude = event.coords.lat; 

@@ -30,7 +30,7 @@ import {AgmCoreModule} from '@agm/core'
   imports: [
     BrowserModule,
      AgmCoreModule.forRoot({
-       apiKey: 'AIzaSyB3FFEp0FSqB0PJRgCjB1wntTE9W3ZTk_c'
+       apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo'
      })
      
   ],

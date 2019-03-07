@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
+import { GoogleMapsAPIWrapper, AgmMap, LatLngBounds, LatLngBoundsLiteral} from '@agm/core';
+import { MapsService } from '../maps.service';
 // import { } from '@types/googlemaps';
 
 
@@ -26,13 +28,79 @@ export class GoogleMapsComponent {
   title = 'hotspot-app';
   latitude: number = 40.742054;
   longitude: number = -73.769417;
-  OnL(event){ 
-    console.log(event); 
-    this.latitude = event.coords.lat; 
-    this.longitude = event.coords.lng;
 
+  lat: string = ''; 
+  lng: string = '';
+  location: Object;
+  
+  constructor(private map: MapsService ){}
+
+  ngOnInit(){
+
+    this.map.getLocation().subscribe(data => {
+      console.log(data); 
+      this.lat = data.latitude; 
+      this.lng = data.longitude;
+
+    })
   }
+
+  
+
+  // L: any;
+  // Lon: any;
+
+  // constructor(){
+  //   if (navigator)
+  //   {
+  //   navigator.geolocation.getCurrentPosition( pos => {
+  //       this.Lon = +pos.coords.longitude;
+  //       this.L = +pos.coords.latitude;
+  //     });
+  //   }
+  // }
+
+
+
+  // OnL(event){ 
+  //   console.log(event); 
+  //   this.latitude = event.coords.lat; 
+  //   this.longitude = event.coords.lng;
+
+  // }
 }
+
+// This is current location 
+// export class AppComponent  {
+//   name = 'Angular 5';
+//   lat:any;
+//   lng:any;
+//   constructor(){
+//     if (navigator)
+//     {
+//     navigator.geolocation.getCurrentPosition( pos => {
+//         this.lng = +pos.coords.longitude;
+//         this.lat = +pos.coords.latitude;
+//       });
+//     }
+//   }
+// }
+
+// export class GoogleMapsComponent implements OnInit {
+//   lat: number ;
+//   lng: number ;
+//   rooms = ROOMS;
+
+//   constructor() { }
+
+//   ngOnInit() {
+//     this.rooms = ROOMS;
+//     this.lat =  40.742054;
+//     this.lng = -73.769417;
+
+//   }
+
+// }
 
 
 

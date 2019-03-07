@@ -10,7 +10,9 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClient } from 'selenium-webdriver/http';
+// import { HttpClient } from 'selenium-webdriver/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+
 import {AgmCoreModule} from '@agm/core';
 
 

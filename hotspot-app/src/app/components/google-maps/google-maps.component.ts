@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { GoogleMapsAPIWrapper, AgmMap, LatLngBounds, LatLngBoundsLiteral} from '@agm/core';
-import { MapsService } from '../maps.service';
+import { MapsService } from '../../services/maps.service';
 // import { } from '@types/googlemaps';
 
 

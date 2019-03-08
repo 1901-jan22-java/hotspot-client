@@ -71,9 +71,9 @@ export class GoogleMapsComponent implements OnInit, AfterViewInit{
  
 title = 'hotspot-app';
  
-lat: string; 
+lat: number; 
  
-lng: string ;
+lng: number ;
  
 location: Object;
  
@@ -122,7 +122,7 @@ this.map.getLocation().subscribe(data => {console.log(data);
    
   this.lng = data.longitude;
    
-  //this.myCoords.push({ latitude: this.lat, longitude: this.lng });
+  this.myCoords.push({ latitude: this.lat, longitude: this.lng, EventName: 'You Are Here!' });
    
   
   })

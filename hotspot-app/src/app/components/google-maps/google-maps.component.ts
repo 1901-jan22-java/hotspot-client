@@ -1,46 +1,167 @@
+// import { Component, OnInit } from '@angular/core';
+// import { ViewChild } from '@angular/core';
+// import { GoogleMapsAPIWrapper, AgmMap, LatLngBounds, LatLngBoundsLiteral} from '@agm/core';
+// import { MapsService } from '../../services/maps.service';
+// // import { } from '@types/googlemaps';
+
+
+
+// @Component({
+//   selector: 'app-google-maps',
+//   templateUrl: './google-maps.component.html',
+//   styleUrls: ['./google-maps.component.css']
+// })
+
+// export class GoogleMapsComponent {
+//   title = 'hotspot-app';
+//   latitude: number = 40.742054;
+//   longitude: number = -73.769417;
+//   color = 'blue';
+
+//   labelOptions = {
+//     color: 'blue',
+//     fontFamily: '',
+//     fontSize: '14px',
+//     fontWeight: 'bold',
+//     text: 'You Are Here !',
+//     }
+
+//   lat: string = ''; 
+//   lng: string = '';
+//   location: Object;
+  
+//   constructor(private map: MapsService ){}
+
+//   ngOnInit(){
+
+//     this.map.getLocation().subscribe(data => {
+//       console.log(data); 
+//       this.lat = data.latitude; 
+//       this.lng = data.longitude;
+
+//     })
+//   }}
+
+
+//// revised 
+
 import { Component, OnInit } from '@angular/core';
-import { ViewChild } from '@angular/core';
+ 
+import { ViewChild, AfterViewInit } from '@angular/core';
+ 
 import { GoogleMapsAPIWrapper, AgmMap, LatLngBounds, LatLngBoundsLiteral} from '@agm/core';
+ 
 import { MapsService } from '../../services/maps.service';
-// import { } from '@types/googlemaps';
 
-
+declare var google: any;
+ 
 
 @Component({
-  selector: 'app-google-maps',
-  templateUrl: './google-maps.component.html',
-  styleUrls: ['./google-maps.component.css']
+ 
+selector: 'app-google-maps',
+ 
+templateUrl: './google-maps.component.html',
+ 
+styleUrls: ['./google-maps.component.css']
+ 
 })
+ 
 
-export class GoogleMapsComponent {
-  title = 'hotspot-app';
-  latitude: number = 40.742054;
-  longitude: number = -73.769417;
-  color = 'blue';
+export class GoogleMapsComponent implements OnInit, AfterViewInit{
+ 
+title = 'hotspot-app';
+ 
+lat: string; 
+ 
+lng: string ;
+ 
+location: Object;
+ 
+myCoords = [
+ 
+{latitude: 40.829659, longitude: -73.926186, EventName: 'Yankee Stadium'},
+ 
+{latitude: 40.7656, longitude: -73.1924, EventName: 'BethPage Ball Park'},
+ 
+{latitude: 40.7571, longitude: -73.8458, EventName: 'Citi Field'},
 
-  labelOptions = {
-    color: 'blue',
-    fontFamily: '',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    text: 'You Are Here !',
-    }
+{latitude: 40.6826, longitude: -73.9754, EventName: 'Barclay Center'},
+ 
+];
+ 
 
-  lat: string = ''; 
-  lng: string = '';
-  location: Object;
+
+
+labelOptions = {
+ 
+color: 'blue',
+ 
+fontFamily: '',
+ 
+fontSize: '14px',
+ 
+fontWeight: 'bold',
+ 
+text: 'You Are Here!',
+ 
+}
+ 
+
+@ViewChild('AgmMap') agmMap: AgmMap;
+ 
+
+constructor(private map: MapsService ){}
+ 
+
+ngOnInit(){
+ 
+
+this.map.getLocation().subscribe(data => {console.log(data); 
+ 
+  this.lat = data.latitude; 
+   
+  this.lng = data.longitude;
+   
+  //this.myCoords.push({ latitude: this.lat, longitude: this.lng });
+   
   
-  constructor(private map: MapsService ){}
-
-  ngOnInit(){
-
-    this.map.getLocation().subscribe(data => {
-      console.log(data); 
-      this.lat = data.latitude; 
-      this.lng = data.longitude;
-
-    })
+  })
+   
   }
+   
+  
+  ngAfterViewInit() {
+   
+  console.log(this.agmMap);
+   
+  this.agmMap.mapReady.subscribe(map => {
+   
+  const bounds: LatLngBounds = new google.maps.LatLngBounds();
+   
+  for (const mm of this.myCoords) {
+   
+  bounds.extend(new google.maps.LatLng(mm.latitude, mm.longitude));
+   
+  }
+   
+  map.fitBounds(bounds);
+   
+  });
+   
+  }
+   
+  
+  mapIdle(){
+   
+  console.log('idle');
+   
+  }
+   
+  
+  }
+   
+  
+  
 
   
 
@@ -65,7 +186,7 @@ export class GoogleMapsComponent {
   //   this.longitude = event.coords.lng;
 
   // }
-}
+
 
 // This is current location 
 // export class AppComponent  {

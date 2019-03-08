@@ -5,6 +5,7 @@ export class Event{
           A JSON formatter is highly reccomended to make sence of it all
     Each event has the Following Properties that we will use (there are more that we will not be using)
     */
+
     id: number;
     postalCode: number;
     lattitude: number;

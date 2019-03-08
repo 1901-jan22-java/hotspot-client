@@ -11,19 +11,20 @@ import { MapsService } from '../../services/maps.service';
   templateUrl: './google-maps.component.html',
   styleUrls: ['./google-maps.component.css']
 })
-// export class GoogleMapsComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit() {
-//   }
-
-// }
 
 export class GoogleMapsComponent {
   title = 'hotspot-app';
   latitude: number = 40.742054;
   longitude: number = -73.769417;
+  color = 'blue';
+
+  labelOptions = {
+    color: 'blue',
+    fontFamily: '',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    text: 'You Are Here !',
+    }
 
   lat: string = ''; 
   lng: string = '';

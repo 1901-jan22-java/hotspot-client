@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import {AgmCoreModule} from '@agm/core';
+import { EventComponent } from './components/event/event.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 
 
@@ -26,7 +27,8 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
     LoginComponent,
     RegistrationComponent,
     GreetingComponent,
-    GoogleMapsComponent
+    GoogleMapsComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,

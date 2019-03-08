@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 interface Location {
-latitude: string; 
-longitude: string; 
+latitude: number; 
+longitude: number; 
 
 }
 @Injectable({

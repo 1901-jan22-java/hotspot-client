@@ -33,7 +33,7 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
     // libraries: ['geometry']
     HttpClientModule,
      AgmCoreModule.forRoot({
-       apiKey: '', // Insert application key here
+       apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo', // Insert application key here
      }),
      AppRoutingModule
   ],

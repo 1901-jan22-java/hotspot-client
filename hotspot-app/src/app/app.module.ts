@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import {AgmCoreModule} from '@agm/core';
+import { AppRoutingModule } from '../app-routing/app-routing.module';
 
 
 
@@ -32,8 +33,9 @@ import {AgmCoreModule} from '@agm/core';
     // libraries: ['geometry']
     HttpClientModule,
      AgmCoreModule.forRoot({
-       apiKey: 'AIzaSyB3FFEp0FSqB0PJRgCjB1wntTE9W3ZTk_c', // Insert application key here
-     })
+       apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo', // Insert application key here
+     }),
+     AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

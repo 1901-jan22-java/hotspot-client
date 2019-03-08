@@ -15,6 +15,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import {AgmCoreModule} from '@agm/core';
 import { EventComponent } from './components/event/event.component';
+import { AppRoutingModule } from '../app-routing/app-routing.module';
 
 
 
@@ -32,10 +33,11 @@ import { EventComponent } from './components/event/event.component';
   imports: [
     BrowserModule,
     // libraries: ['geometry']
-    HttpClientModule,  
+    HttpClientModule,
      AgmCoreModule.forRoot({
-       apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo'
-     })
+       apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo', // Insert application key here
+     }),
+     AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,8 +27,8 @@ export class EventComponent implements OnInit {
       resp => {
         if (resp != null){
           this.event_list = resp;
-          this.events = this.event_list.events.event;
-          console.log(this.events);
+          // this.events = this.event_list.events.event;
+          // console.log(this.events);
         } else {
           console.error('Error loading events');
         }

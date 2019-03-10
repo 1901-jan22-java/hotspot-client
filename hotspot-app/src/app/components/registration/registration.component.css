@@ -1,0 +1,42 @@
+.enclosure {
+    background-color: #3E78B2;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-size: 64px;
+    color: white;
+}
+
+p, .form-check-label {
+    font-family: lato;
+    font-size: 12px;
+    color: white;
+}
+
+.form-check-inline {
+    display: relative;
+    margin-left: 190px;
+}
+
+.container {
+    font-family: lato;
+    font-size: 24px;
+    color: white;
+}
+
+.btn-lg {
+    font-family: Montserrat;
+    /* color:#60B0F4; */
+    background-color:#EF3E36;
+    border-color: #EF3E36;
+    font-weight: 400;
+    border-radius:3px;
+}
+
+
+.btn-lg:hover {
+    color: #EF3E36;
+    background-color: white;
+    border-color: white;
+}

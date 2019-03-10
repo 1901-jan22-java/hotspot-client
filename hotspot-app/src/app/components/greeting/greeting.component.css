@@ -1,0 +1,20 @@
+/* .enclosure {
+    margin-top: -16px;
+    background-color: #F6F6F9;  
+    width: 100%;
+} */
+.enclosure {
+    background-color: #3E78B2;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-size: 64px;
+    color: white;
+}
+
+p {
+    font-family: lato;
+    font-size: 24px;
+    color: white;
+}

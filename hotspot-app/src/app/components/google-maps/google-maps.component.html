@@ -1,0 +1,33 @@
+<p>
+  <!-- <h1> Google Maps Dispay</h1> -->
+</p>
+<h1 class = "Jumbotron">Stadiums Near You ! </h1>
+<!-- <div #gmap style="width:100%;height:400px"></div> -->
+<!-- <agm-map [latitude] = 'lat' [longitude] = 'lng' >
+  <agm-marker [latitude] = 'latitude' [longitude] = 'longitude' > </agm-marker> 
+  <agm-marker  [latitude]="lat" [longitude]="lng" [label]="labelOptions">
+  </agm-marker> </agm-map>  -->
+
+
+
+  <agm-map [zoom] = "1" #AgmMap [latitude] = 'lat' [longitude] = 'lng' (mapReady) = "mapReady($event)" [fitBounds]="true">
+    <button id = "festivals" class = "toggle-button controls button" (click) = "festivalClicked()"> Festivals
+    </button>
+    <button id = "sports" class = "toggle-button controls button" (click) = "sportsClicked()"> Sports
+    </button>
+    <agm-marker  [latitude] = 'lat' [longitude] = 'lng'[label]="labelOptions" [agmFitBounds]="true">
+    </agm-marker>
+    <agm-marker (markerClick)="window.open()" (markerClick)="window.close()" *ngFor = "let coords of events; let i = index" [latitude] = "coords.latitude" [longitude] = "coords.longitude" [agmFitBounds]="true">
+      <agm-info-window #window>
+        <h6>{{ events[i].venue_name }}</h6>
+        <a> {{ events[i].url }} </a>
+      </agm-info-window>
+    </agm-marker> 
+  </agm-map>
+
+
+  <!-- <agm-map [latitude]="lat" [longitude]="lng"> 
+      <agm-marker [latitude]="lat" [longitude]="lng">
+      </agm-marker>  -->
+
+      <!-- (mapClick)="OnL($event)" -->

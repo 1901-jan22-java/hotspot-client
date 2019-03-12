@@ -1,0 +1,13 @@
+<div class="enclosure py-5">
+  <div class="container" *ngIf="event">
+      <h1>Check Out this HotSpot:</h1>
+      <img src={{event.image.medium.url}}/>
+      <br>Title:
+      <h4>{{event.title}}</h4>
+      <br>Venue:
+      <h4>{{event.venue_name}}</h4>
+      <h5>{{event.description}}</h5>
+    
+
+  </div>
+</div>

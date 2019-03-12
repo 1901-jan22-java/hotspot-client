@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 
-
+import { DataTablesModule } from 'angular-datatables';
 import { AppComponent } from './app.component';
 import { HotspotNavbarComponent } from './components/hotspot-navbar/hotspot-navbar.component';
 import { HotspotFooterComponent } from './components/hotspot-footer/hotspot-footer.component';
@@ -18,6 +18,7 @@ import { EventComponent } from './components/event/event.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { nightLifeService } from './services/nightLife.service';
 import { ConcertsService } from './services/concerts.service';
+import { EventpageComponent } from './components/eventpage/eventpage.component';
 
 
 
@@ -30,11 +31,13 @@ import { ConcertsService } from './services/concerts.service';
     RegistrationComponent,
     GreetingComponent,
     GoogleMapsComponent,
-    EventComponent
+    EventComponent,
+    EventpageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    DataTablesModule,
      AgmCoreModule.forRoot({
        apiKey: '', // Insert application key here
      }),

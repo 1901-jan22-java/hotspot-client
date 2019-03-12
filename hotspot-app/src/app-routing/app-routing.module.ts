@@ -6,6 +6,7 @@ import { LoginComponent } from 'src/app/components/login/login.component';
 import { GoogleMapsComponent } from 'src/app/components/google-maps/google-maps.component';
 import { RegistrationComponent } from 'src/app/components/registration/registration.component';
 import { EventComponent } from 'src/app/components/event/event.component'
+import { EventpageComponent } from 'src/app/components/eventpage/eventpage.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/greeting', pathMatch: 'full' },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'googlemaps', component: GoogleMapsComponent },
-  { path: 'event', component: EventComponent }
+  { path: 'event', component: EventComponent },
+  { path: 'eventpage', component: EventpageComponent }
 ];
 
 @NgModule({

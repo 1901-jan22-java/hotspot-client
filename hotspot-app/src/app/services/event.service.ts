@@ -14,6 +14,13 @@ const headers = new HttpHeaders()
   .set('Content-Type', 'application/json')
   .set('Authorization', 'Basic my-auth-token');
 
+import { Event } from '../models/Event';
+import { Observable, Observer } from 'rxjs';
+
+const params = new HttpParams()
+  .set('app_key', 'cKxPsB44vwSF3z42')
+  .set('location', 'San Diego')
+  .set('sort_order', 'popularity');
 
 
 @Injectable({
@@ -47,4 +54,6 @@ export class EventService {
       
     return this.http.get<EventWrapper>(this.url, {params});
   }
+
+  
 }

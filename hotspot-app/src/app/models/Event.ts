@@ -6,7 +6,7 @@ export class Event{
     Each event has the Following Properties that we will use (there are more that we will not be using)
     */
 
-    id: number;
+    id: string;
     postalCode: number;
     lattitude: number;
     longitude: number;
@@ -21,6 +21,13 @@ export class Event{
     country_abbr: String;
     start_time : String;
     title: String;
+    image: {
+        medium : {
+            height: String;
+            url : String;
+            width: String;
+        };
+    };
 
     //There is a performers object which contains performer objects that have a name
     // They can be stored in this performers variable seperated by spaces

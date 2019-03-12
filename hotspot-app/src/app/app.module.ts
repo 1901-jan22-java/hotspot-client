@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 
-
+import { DataTablesModule } from 'angular-datatables';
 import { AppComponent } from './app.component';
 import { HotspotNavbarComponent } from './components/hotspot-navbar/hotspot-navbar.component';
 import { HotspotFooterComponent } from './components/hotspot-footer/hotspot-footer.component';
@@ -16,6 +16,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AgmCoreModule} from '@agm/core';
 import { EventComponent } from './components/event/event.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
+import { EventpageComponent } from './components/eventpage/eventpage.component';
 
 
 
@@ -28,12 +29,14 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
     RegistrationComponent,
     GreetingComponent,
     GoogleMapsComponent,
-    EventComponent
+    EventComponent,
+    EventpageComponent
   ],
   imports: [
     BrowserModule,
     // libraries: ['geometry']
     HttpClientModule,
+    DataTablesModule,
      AgmCoreModule.forRoot({
        apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo', // Insert application key here
      }),

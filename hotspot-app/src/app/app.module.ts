@@ -16,6 +16,8 @@ import { EventService } from './services/event.service';
 import { SportsService } from './services/sports.service';
 import { EventComponent } from './components/event/event.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
+import { nightLifeService } from './services/nightLife.service';
+import { ConcertsService } from './services/concerts.service';
 
 
 
@@ -32,16 +34,17 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
   ],
   imports: [
     BrowserModule,
-    // libraries: ['geometry']
     HttpClientModule,
      AgmCoreModule.forRoot({
-       apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo', // Insert application key here
+       apiKey: '', // Insert application key here
      }),
      AppRoutingModule
   ],
   providers: [
     EventService,
-    SportsService
+    SportsService,
+    nightLifeService,
+    ConcertsService
   ],
   bootstrap: [AppComponent]
 })

@@ -15,10 +15,15 @@ const headers = new HttpHeaders()
   .set('Authorization', 'Basic my-auth-token');
 
 
+// let params = new HttpParams()
+//   .set('app_key', 'cKxPsB44vwSF3z42')
+//   .set('location', 'Texas')
+//   .set('category', 'festival_parades'); 
+
 @Injectable({
   providedIn: 'root'
 })
-export class SportsService {
+export class ConcertsService {
   lat: number; 
   lng: number;
   postalCode: number;
@@ -32,41 +37,17 @@ export class SportsService {
 
   constructor(private http: HttpClient, private ms: MapsService) { }
 
-  // ngOninit(){
-  //   this.getLocation();
-  // }
-
- //  public getRegion(){
-    
- //      this.ms.getLocation().subscribe(data => {
- //      this.lat = data.latitude; 
- //      this.lng = data.longitude;
- //      this.postalCode = data.postal;
- //      this.city = data.city;
- //      this.countryName = data.country_name;
- //      this.countryAbbr = data.country;
- //      this.region = data.region;
- // })
- //      return this.countryName;
-
-
- //  }
-
-  //sports, concerts, night life
+  
 
   public getEvents(data: any){
-    //console.log(this.getRegion());
-    //console.log("REGION " +this.region);
-    //this.params.append('location', <string>this.getLocation());
-    //console.log(this.params.toString());
+    
     let params = new HttpParams();
     Object.keys(data).forEach(function (key){
-      params = params.set('app_key', 'cKxPsB44vwSF3z42')
+      params = params.set('app_key', '')
       .set('location', data)
-      .set('category', 'sports');
+      .set('category', 'music');
     });
       
-    //params.set('location', <string>this.getRegion());
     return this.http.get<EventWrapper>(this.url, {params});
   }
 }

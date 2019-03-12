@@ -15,11 +15,15 @@ const headers = new HttpHeaders()
   .set('Authorization', 'Basic my-auth-token');
 
 
+// let params = new HttpParams()
+//   .set('app_key', 'cKxPsB44vwSF3z42')
+//   .set('location', 'Texas')
+//   .set('category', 'festival_parades'); 
 
 @Injectable({
   providedIn: 'root'
 })
-export class EventService {
+export class ConcertsService {
   lat: number; 
   lng: number;
   postalCode: number;
@@ -33,16 +37,15 @@ export class EventService {
 
   constructor(private http: HttpClient, private ms: MapsService) { }
 
- 
-
+  
 
   public getEvents(data: any){
-   
+    
     let params = new HttpParams();
     Object.keys(data).forEach(function (key){
-      params = params.set('app_key', 'cKxPsB44vwSF3z42')
+      params = params.set('app_key', '')
       .set('location', data)
-      .set('category', 'festival_parades');
+      .set('category', 'music');
     });
       
     return this.http.get<EventWrapper>(this.url, {params});

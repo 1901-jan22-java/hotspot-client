@@ -15,11 +15,10 @@ const headers = new HttpHeaders()
   .set('Authorization', 'Basic my-auth-token');
 
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class EventService {
+export class nightLifeService {
   lat: number; 
   lng: number;
   postalCode: number;
@@ -33,16 +32,13 @@ export class EventService {
 
   constructor(private http: HttpClient, private ms: MapsService) { }
 
- 
-
-
+  
   public getEvents(data: any){
-   
     let params = new HttpParams();
     Object.keys(data).forEach(function (key){
       params = params.set('app_key', 'cKxPsB44vwSF3z42')
       .set('location', data)
-      .set('category', 'festival_parades');
+      .set('category', 'singles_social');
     });
       
     return this.http.get<EventWrapper>(this.url, {params});

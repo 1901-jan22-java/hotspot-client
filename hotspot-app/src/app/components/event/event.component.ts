@@ -23,7 +23,7 @@ export class EventComponent implements OnInit {
   }
 
   getEvents(){
-    this.eService.getEvents().subscribe(
+    this.eService.getEvents("Canada").subscribe(
       resp => {
         if (resp != null){
           this.event_list = resp;

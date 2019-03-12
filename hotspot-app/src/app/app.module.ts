@@ -10,12 +10,14 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 import { RouterModule, Routes } from '@angular/router';
-// import { HttpClient } from 'selenium-webdriver/http';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-
 import {AgmCoreModule} from '@agm/core';
+import { EventService } from './services/event.service';
+import { SportsService } from './services/sports.service';
 import { EventComponent } from './components/event/event.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
+import { nightLifeService } from './services/nightLife.service';
+import { ConcertsService } from './services/concerts.service';
 
 
 
@@ -32,14 +34,18 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
   ],
   imports: [
     BrowserModule,
-    // libraries: ['geometry']
     HttpClientModule,
      AgmCoreModule.forRoot({
        apiKey: '', // Insert application key here
      }),
      AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    EventService,
+    SportsService,
+    nightLifeService,
+    ConcertsService
+  ],
   bootstrap: [AppComponent]
 })
 

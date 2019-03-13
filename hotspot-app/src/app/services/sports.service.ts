@@ -14,18 +14,11 @@ const headers = new HttpHeaders()
   .set('Content-Type', 'application/json')
   .set('Authorization', 'Basic my-auth-token');
 
-import { Event } from '../models/Event';
-
-const params = new HttpParams()
-  .set('app_key', 'cKxPsB44vwSF3z42')
-  .set('location', 'San Diego')
-  .set('sort_order', 'popularity');
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class EventService {
+export class SportsService {
   lat: number; 
   lng: number;
   postalCode: number;
@@ -39,23 +32,41 @@ export class EventService {
 
   constructor(private http: HttpClient, private ms: MapsService) { }
 
- 
-  public getEvents(){
-    return this.http.get<EventWrapper>(this.url, {params});
-  }
+  // ngOninit(){
+  //   this.getLocation();
+  // }
+
+ //  public getRegion(){
+    
+ //      this.ms.getLocation().subscribe(data => {
+ //      this.lat = data.latitude; 
+ //      this.lng = data.longitude;
+ //      this.postalCode = data.postal;
+ //      this.city = data.city;
+ //      this.countryName = data.country_name;
+ //      this.countryAbbr = data.country;
+ //      this.region = data.region;
+ // })
+ //      return this.countryName;
 
 
-  public getEventsByLocation(data: any){
-   
+ //  }
+
+  //sports, concerts, night life
+
+  public getEvents(data: any){
+    //console.log(this.getRegion());
+    //console.log("REGION " +this.region);
+    //this.params.append('location', <string>this.getLocation());
+    //console.log(this.params.toString());
     let params = new HttpParams();
     Object.keys(data).forEach(function (key){
       params = params.set('app_key', 'cKxPsB44vwSF3z42')
       .set('location', data)
-      .set('category', 'festival_parades');
+      .set('category', 'sports');
     });
       
+    //params.set('location', <string>this.getRegion());
     return this.http.get<EventWrapper>(this.url, {params});
   }
-
-  
 }

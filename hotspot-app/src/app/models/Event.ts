@@ -8,7 +8,7 @@ export class Event{
 
     id: string;
     postalCode: number;
-    lattitude: number;
+    latitude: number;
     longitude: number;
     url: String;
     venue_url: String;

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Events } from '../models/Events';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { EventWrapper } from '../models/EventWrapper';
+<<<<<<< HEAD
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
 import { MapsService } from '../services/maps.service';
@@ -14,12 +15,15 @@ const headers = new HttpHeaders()
   .set('Content-Type', 'application/json')
   .set('Authorization', 'Basic my-auth-token');
 
+=======
 import { Event } from '../models/Event';
+import { Observable, Observer } from 'rxjs';
 
 const params = new HttpParams()
   .set('app_key', 'cKxPsB44vwSF3z42')
   .set('location', 'San Diego')
   .set('sort_order', 'popularity');
+>>>>>>> vic-branch
 
 
 @Injectable({
@@ -40,12 +44,9 @@ export class EventService {
   constructor(private http: HttpClient, private ms: MapsService) { }
 
  
-  public getEvents(){
-    return this.http.get<EventWrapper>(this.url, {params});
-  }
 
 
-  public getEventsByLocation(data: any){
+  public getEvents(data: any){
    
     let params = new HttpParams();
     Object.keys(data).forEach(function (key){

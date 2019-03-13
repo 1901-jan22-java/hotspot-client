@@ -22,15 +22,19 @@
     "@angular/router": "~7.2.0",
     "@types/google-maps": "^3.2.0",
     "agm-direction": "^0.7.6",
+<<<<<<< HEAD
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "core-js": "^2.5.4",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+=======
     "angular-datatables": "^7.0.0",
+    "core-js": "^2.5.4",
     "datatables.net": "^1.10.19",
     "datatables.net-dt": "^1.10.19",
     "jquery": "^3.3.1",
+>>>>>>> vic-branch
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
     "tslib": "^1.9.0",
@@ -41,8 +45,11 @@
     "@angular/cli": "^7.3.4",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
+<<<<<<< HEAD
     "@types/cors": "^2.8.4",
+=======
     "@types/datatables.net": "^1.10.15",
+>>>>>>> vic-branch
     "@types/googlemaps": "^3.30.18",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",

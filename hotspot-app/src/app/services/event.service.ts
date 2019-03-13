@@ -15,7 +15,6 @@ const headers = new HttpHeaders()
   .set('Authorization', 'Basic my-auth-token');
 
 import { Event } from '../models/Event';
-import { Observable, Observer } from 'rxjs';
 
 const params = new HttpParams()
   .set('app_key', 'cKxPsB44vwSF3z42')
@@ -41,9 +40,12 @@ export class EventService {
   constructor(private http: HttpClient, private ms: MapsService) { }
 
  
+  public getEvents(){
+    return this.http.get<EventWrapper>(this.url, {params});
+  }
 
 
-  public getEvents(data: any){
+  public getEventsByLocation(data: any){
    
     let params = new HttpParams();
     Object.keys(data).forEach(function (key){

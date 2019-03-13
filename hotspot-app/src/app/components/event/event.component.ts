@@ -26,7 +26,7 @@ export class EventComponent implements OnInit {
   }
 
   getEvents(){
-    this.eService.getEvents("Canada").subscribe(
+    this.eService.getEvents().subscribe(
       resp => {
         if (resp != null){
           this.event_list = resp;

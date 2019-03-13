@@ -59,7 +59,7 @@ export class GoogleMapsComponent implements OnInit{
       this.region = data.region;
 
       this.events = [{ 
-        id: 0, 
+        id: "", 
         postalCode: this.postalCode, 
         latitude: this.lat, 
         longitude: this.lng, 
@@ -75,6 +75,13 @@ export class GoogleMapsComponent implements OnInit{
         start_time : "", 
         title: 'You Are Here!',
         performers: "",
+        image: {
+          medium : {
+              height: "",
+              url : "",
+              width: ""
+            }
+        },
         image_url: "",
         description: "" 
       }];
@@ -124,13 +131,13 @@ export class GoogleMapsComponent implements OnInit{
   }
 
   getEvents(){
-    this.es.getEvents(this.region).subscribe(
+    this.es.getEventsByLocation(this.region).subscribe(
       resp => {console.log(resp);
         if (resp != null){
           this.event_list = resp;
           this.events = this.event_list.events.event;
           this.events.push({ 
-            id: 0, 
+            id: "", 
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -143,6 +150,13 @@ export class GoogleMapsComponent implements OnInit{
             city_name: this.city,
             country_name: this.countryName,
             country_abbr: this.countryAbbr,
+            image: {
+              medium : {
+                  height: "",
+                  url : "",
+                  width: ""
+                }
+            },
             start_time : "", 
             title: 'You Are Here!',
             performers: "",
@@ -164,7 +178,7 @@ export class GoogleMapsComponent implements OnInit{
           this.event_list = resp;
           this.events = this.event_list.events.event;
           this.events.push({ 
-            id: 0, 
+            id: "", 
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -180,6 +194,13 @@ export class GoogleMapsComponent implements OnInit{
             start_time : "", 
             title: 'You Are Here!',
             performers: "",
+            image: {
+              medium : {
+                  height: "",
+                  url : "",
+                  width: ""
+                }
+            },
             image_url: "",
             description: "" 
           });
@@ -198,7 +219,7 @@ export class GoogleMapsComponent implements OnInit{
           this.event_list = resp;
           this.events = this.event_list.events.event;
           this.events.push({ 
-            id: 0, 
+            id: "", 
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -213,6 +234,13 @@ export class GoogleMapsComponent implements OnInit{
             country_abbr: this.countryAbbr,
             start_time : "", 
             title: 'You Are Here!',
+            image: {
+              medium : {
+                  height: "",
+                  url : "",
+                  width: ""
+                }
+            },
             performers: "",
             image_url: "",
             description: "" 
@@ -232,7 +260,7 @@ export class GoogleMapsComponent implements OnInit{
           this.event_list = resp;
           this.events = this.event_list.events.event;
           this.events.push({ 
-            id: 0, 
+            id: "", 
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -249,6 +277,13 @@ export class GoogleMapsComponent implements OnInit{
             title: 'You Are Here!',
             performers: "",
             image_url: "",
+            image: {
+              medium : {
+                  height: "",
+                  url : "",
+                  width: ""
+                }
+            },
             description: "" 
           });
           console.log(this.events);

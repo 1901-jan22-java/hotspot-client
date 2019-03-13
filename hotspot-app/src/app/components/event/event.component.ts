@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';
 import { Event } from 'src/app/models/Event';
-import { Events } from 'src/app/models/Events';
 import { EventWrapper } from 'src/app/models/EventWrapper';
 import { Subject } from 'rxjs';
 

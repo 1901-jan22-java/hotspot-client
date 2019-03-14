@@ -26,8 +26,8 @@ const params = new HttpParams()
   providedIn: 'root'
 })
 export class EventService {
-  lat: number; 
-  lng: number;
+  lat: string; 
+  lng: string;
   postalCode: number;
   city: String;
   countryName: String;

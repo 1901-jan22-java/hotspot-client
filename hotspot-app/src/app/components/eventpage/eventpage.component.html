@@ -7,7 +7,16 @@
       <br>Venue:
       <h4>{{event.venue_name}}</h4>
       <h5>{{event.description}}</h5>
-    
 
+              <h5 style="text-align:right">Directions To HotSpot</h5>
+              
+
+      <p style="width: 48%; float: right;">
+        <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-direction [origin]="origin" [destination]="destination">
+          </agm-direction>
+        </agm-map>
+        </p>
   </div>
+    
 </div>

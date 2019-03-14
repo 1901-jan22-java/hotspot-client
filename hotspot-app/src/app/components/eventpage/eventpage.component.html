@@ -1,12 +1,19 @@
 <div class="enclosure py-5">
-  <div class="container" *ngIf="event">
-      <h1>Check Out this HotSpot:</h1>
-      <img src={{event.image.medium.url}}/>
-      <br>Title:
-      <h4>{{event.title}}</h4>
-      <br>Venue:
-      <h4>{{event.venue_name}}</h4>
-      <h5>{{event.description}}</h5>
+  <h1>Check Out this HotSpot:</h1>
+  <div class="container-fluid" *ngIf="event">
+    <div id="wrapper">
+      <img id="event_image" src={{event.image.medium.url}}/>
+    </div>  
+    <div id="text-wrapper">
+      <h4>Title: </h4>
+      <h5>{{event.title}}</h5>
+      <h4>Venue: </h4>
+      <h5>{{event.venue_name}}</h5>
+      <a href={{event.venue_url}}>Link to Venue </a>
+      <h4 *ngIf="event.description">Description:</h4>
+      <h6>{{event.description}}</h6>
+      <a href={{event.url}}>Link to Event Website</a>
+    </div>
     
 
   </div>

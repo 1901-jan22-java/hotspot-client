@@ -20,9 +20,9 @@ export class EventpageComponent implements OnInit {
     this.sub = this.route.queryParams.subscribe(params =>
       { let id = params["event_id"];
       console.log(id);
-      if(id){
+       if(id){
         this.getEvent(id);
-      }
+      } 
 
       });
   }

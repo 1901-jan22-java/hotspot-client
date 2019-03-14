@@ -1,0 +1,26 @@
+#event_image img{
+    border: 5px, black;
+    display: block;
+}
+
+#wrapper {
+    padding-top: 10px;
+}
+
+.container-fluid {
+    background: rgb(140, 192, 236);
+}
+
+h4 {
+    font-family: Montserrat;
+}
+
+h5 {
+    font-family: Montserrat;
+    
+}
+
+h1 {
+    font-family: Montserrat;
+}
+

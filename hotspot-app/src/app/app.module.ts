@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-
+import { AgmDirectionModule } from 'agm-direction';
 import { DataTablesModule } from 'angular-datatables';
 import { AppComponent } from './app.component';
 import { HotspotNavbarComponent } from './components/hotspot-navbar/hotspot-navbar.component';
@@ -41,10 +41,11 @@ import { EventpageComponent } from './components/eventpage/eventpage.component';
     HttpClientModule,
     DataTablesModule,
      AgmCoreModule.forRoot({
-       apiKey: '', // Insert application key here
+       apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo', // Insert application key here
      }),
      AppRoutingModule,
-     FormsModule
+     FormsModule,
+     AgmDirectionModule
   ],
   providers: [
     EventService,

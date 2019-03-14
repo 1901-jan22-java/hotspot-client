@@ -20,8 +20,8 @@ import { Event } from '../models/Event';
   providedIn: 'root'
 })
 export class EventService {
-  lat: number; 
-  lng: number;
+  lat: string; 
+  lng: string;
   postalCode: number;
   city: String;
   countryName: String;

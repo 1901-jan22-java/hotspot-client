@@ -10,6 +10,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 // import { HttpClient } from 'selenium-webdriver/http';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
@@ -37,7 +38,8 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
      AgmCoreModule.forRoot({
        apiKey: 'AIzaSyCiqtKlov-AbjdUFOx58cAMFnMq8tMoBGo', // Insert application key here
      }),
-     AppRoutingModule
+     AppRoutingModule,
+     FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

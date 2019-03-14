@@ -4,7 +4,6 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 interface Location {
 latitude: number; 
 longitude: number; 
-
 }
 @Injectable({
   providedIn: 'root'

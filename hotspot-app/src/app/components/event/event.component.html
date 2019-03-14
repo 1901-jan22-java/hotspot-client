@@ -1,7 +1,28 @@
 <div class="enclosure py-5">
   <div class="container">
   
-  
+    Enter a Location Name or its Postal Code <br>
+  <input [(ngModel)]="userInputLocation"><br>
+
+  Enter a Radius 
+  <input type = number [(ngModel)]=radius><br>
+
+  Select Even Categories:
+  <input type = "checkbox" class="eventCategories" name="Concert" [(ngModel)]="checkConcert"> <label for="Concert">Concert </label>
+  <input type = "checkbox" class="eventCategories" name="Festival" [(ngModel)]="checkFestival"> <label for="Festival">Festival </label>
+  <input type = "checkbox" class="eventCategories" name="Sports" [(ngModel)]="checkSports"> <label for="Sports">Sports </label>
+  <input type = "checkbox" class="eventCategories" name="Nightlife" [(ngModel)]="checkNightlife"> <label for="Nightlife">Nightlife </label> <br>
+
+  Time Frame:
+  <input type = "radio" id="ThisWeekend" checked = "checked" name ="eventTimeFrame" value="ThisWeekend" [(ngModel)]=timeFrame> <label for="ThisWeekend">This Weekend</label>
+  <input type = "radio" id="Next30Days" name ="eventTimeFrame" value="Next30Days" [(ngModel)]=timeFrame> <label for="Next30Days">Next 30 Days</label>
+  <input type = "radio" id="Future" name ="eventTimeFrame" value="Future" [(ngModel)]=timeFrame> <label for="Future">Future</label>
+  <br>
+  <button (click)="loadTable()">Search</button>(Can take a little bit to load new list. Please wait.Executing a new seach before a current seach finishes can cause issues)
+
+
+
+
     <table>
     <tr>
       <th>Event</th>

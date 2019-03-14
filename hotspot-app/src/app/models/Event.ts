@@ -1,4 +1,4 @@
-export class Event{
+export class Event {
     /* The JSON files containts an array called events
     example link to see it in a browser 
           http://api.eventful.com/json/events/search?app_key=cKxPsB44vwSF3z42&location=San+Diego&t=This+Weekend&c=music

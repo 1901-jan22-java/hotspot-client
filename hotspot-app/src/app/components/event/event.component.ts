@@ -18,7 +18,7 @@ export class EventComponent implements OnInit {
   events : Event[];
   dtTrigger: Subject<Event> = new Subject();
 
-  constructor(private eService: EventService, private router : Router) {}
+  constructor(private eService: EventService, private router: Router) {}
 
   ngOnInit() {
     console.log("IN EVENT COMPONENT CONSTRUCTOR");

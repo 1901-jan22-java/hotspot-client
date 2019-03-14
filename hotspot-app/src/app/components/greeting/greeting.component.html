@@ -9,6 +9,10 @@
       <em>Accounts do make it easy to save your personal preferences tho...</em><br>
       And we totally recommend you make one!
     </p>
+    
+    <button (click)="getAllUsers()">Get Users</button>
+    <div *ngFor="let u of users">
+      {{ u | json }}
+    </div>
   </div>
-  
 </div>

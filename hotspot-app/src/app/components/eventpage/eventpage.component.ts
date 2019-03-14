@@ -19,16 +19,21 @@ export class EventpageComponent implements OnInit {
     console.log("In event page");
     this.sub = this.route.queryParams.subscribe(params =>
       { let id = params["event_id"];
+        let category = params["category"];
+        let latitude = params["latitude"];
+        let longitude = params["longitude"];
+        let timeframe = params["timeframe"];
+        let radius = params["radius"];
       console.log(id);
        if(id){
-        this.getEvent(id);
+        this.getEvent(id, category, latitude, longitude, timeframe, radius);
       } 
 
       });
   }
 
-  getEvent(id:string){
-    this.eService.getEvents().subscribe(
+  getEvent(id:string, category:string, latitude:any, longitude:any, timeframe:any, radius:any){
+    this.eService.getEvents(longitude, latitude, radius, category, timeframe).subscribe(
       resp => {
         if (resp != null){
           this.events = resp.events.event;
@@ -47,7 +52,4 @@ export class EventpageComponent implements OnInit {
     );
   }
   
-  ngOnDestroy(){
-    this.sub.unsubsribe();
-  }
 }

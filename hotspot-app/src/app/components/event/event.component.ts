@@ -39,6 +39,7 @@ export class EventComponent implements OnInit {
   ngOnInit() {
     console.log("IN EVENT COMPONENT onInit");
     this.dummyEventfulCall();
+    this.dtTrigger.next();
   };
 
   dummyEventfulCall(){
@@ -91,7 +92,6 @@ export class EventComponent implements OnInit {
         console.log(this.userInputCategories[i]);
         this.getEvents2(this.userInputCategories[i]);
       }
-      
       } 
     );
   }
@@ -154,7 +154,12 @@ export class EventComponent implements OnInit {
     console.log(event);
     let navigationExtras = {
       queryParams: {
-        "event_id": event.id
+        "event_id": event.id,
+        "category" : event.category,
+        "latitude": this.latitude,
+        "longitude": this.longitude,
+        "radius": this.radius,
+        "timeframe": this.timeFrame
       }
     };
     this.router.navigate(['/eventpage'], navigationExtras);

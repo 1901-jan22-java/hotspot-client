@@ -60,6 +60,7 @@ export class GoogleMapsComponent implements OnInit{
 
       this.events = [{ 
         id: "", 
+        category: "",
         postalCode: this.postalCode, 
         latitude: this.lat, 
         longitude: this.lng, 
@@ -138,6 +139,7 @@ export class GoogleMapsComponent implements OnInit{
           this.events = this.event_list.events.event;
           this.events.push({ 
             id: "", 
+            category: "",
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -179,6 +181,7 @@ export class GoogleMapsComponent implements OnInit{
           this.events = this.event_list.events.event;
           this.events.push({ 
             id: "", 
+            category: "",
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -220,6 +223,7 @@ export class GoogleMapsComponent implements OnInit{
           this.events = this.event_list.events.event;
           this.events.push({ 
             id: "", 
+            category: "",
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -261,6 +265,7 @@ export class GoogleMapsComponent implements OnInit{
           this.events = this.event_list.events.event;
           this.events.push({ 
             id: "", 
+            category: "",
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 

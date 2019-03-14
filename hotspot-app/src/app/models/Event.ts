@@ -6,6 +6,7 @@ export class Event{
     Each event has the Following Properties that we will use (there are more that we will not be using)
     */
 
+    category: string;
     id: string;
     postalCode: number;
     latitude: number;

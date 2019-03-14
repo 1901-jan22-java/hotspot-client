@@ -16,12 +16,6 @@ const headers = new HttpHeaders()
 
 import { Event } from '../models/Event';
 
-const params = new HttpParams()
-  .set('app_key', 'cKxPsB44vwSF3z42')
-  .set('location', 'San Diego')
-  .set('sort_order', 'popularity');
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -39,9 +33,20 @@ export class EventService {
 
   constructor(private http: HttpClient, private ms: MapsService) { }
 
+  public getEvents(longitude:string,latitude:string,radius:string,category:string,timeFrame:string){
+     var cordsString= latitude+","+longitude;
+     console.log(cordsString);
+      const params = new HttpParams()
+      .set('app_key', 'cKxPsB44vwSF3z42')
+      .set("q",category)
+      .set('where', cordsString)
+      .set("date","future")
+      .set("page_size","20")
+      .set("within",radius)
+      .set("t",timeFrame)
+      .set("sort_order","popularity");
+      return this.http.get<EventWrapper>(this.url,{params});
  
-  public getEvents(){
-    return this.http.get<EventWrapper>(this.url, {params});
   }
 
 

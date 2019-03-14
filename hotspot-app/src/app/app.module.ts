@@ -10,6 +10,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+// import { HttpClient } from 'selenium-webdriver/http';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AgmCoreModule} from '@agm/core';
 import { EventService } from './services/event.service';
@@ -41,7 +43,8 @@ import { EventpageComponent } from './components/eventpage/eventpage.component';
      AgmCoreModule.forRoot({
        apiKey: '', // Insert application key here
      }),
-     AppRoutingModule
+     AppRoutingModule,
+     FormsModule
   ],
   providers: [
     EventService,

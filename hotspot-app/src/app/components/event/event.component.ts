@@ -56,7 +56,7 @@ export class EventComponent implements OnInit {
           this.events = this.event_list.events.event;
           this.events.length=0;
           console.log(this.events);
-          // this.dtTrigger.next();
+          //this.dtTrigger.next();
         } 
         // else {
         //   this.events =this.event_list.events.event;

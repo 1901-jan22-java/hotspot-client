@@ -63,6 +63,7 @@ export class EventpageComponent implements OnInit {
 
       this.events = [{ 
         id: "", 
+        category: "",
         postalCode: this.postalCode, 
         latitude: this.lat, 
         longitude: this.lng, 

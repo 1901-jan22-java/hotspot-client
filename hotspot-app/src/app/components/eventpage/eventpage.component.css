@@ -24,3 +24,7 @@ h1 {
     font-family: Montserrat;
 }
 
+agm-map {
+    height: 400px
+}
+

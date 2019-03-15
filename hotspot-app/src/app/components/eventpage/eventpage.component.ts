@@ -13,6 +13,7 @@ export class EventpageComponent implements OnInit {
   sub;
   events: Event[];
   event: Event;
+  music: boolean;
   constructor(private route: ActivatedRoute,
     private router: Router, private eService: EventService, private map: MapsService) { }
 
@@ -36,9 +37,12 @@ export class EventpageComponent implements OnInit {
         let longitude = params["longitude"];
         let timeframe = params["timeframe"];
         let radius = params["radius"];
-      console.log(id);
+      console.log(category + id + latitude + longitude + timeframe + radius);
        if(id){
         this.getEvent(id, category, latitude, longitude, timeframe, radius);
+        if(category=="Concert"){
+          this.music=true;
+        }
       } 
 
       });
@@ -106,12 +110,13 @@ export class EventpageComponent implements OnInit {
       resp => {
         if (resp != null){
           this.events = resp.events.event;
+          console.log(this.events);
           for(let e of this.events){
             if(e.id == id){
               this.event = e;
               console.log(this.event);
             } else {
-              console.log(e.id +" is not equal to " + id);
+              //console.log(e.id +" is not equal to " + id);
             }
           }
         } else {

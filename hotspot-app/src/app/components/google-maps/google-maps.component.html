@@ -19,7 +19,7 @@
     <agm-marker (markerClick)="window.open()" (markerClick)="window.close()" *ngFor = "let coords of events; let i = index" [latitude] = "coords.latitude" [longitude] = "coords.longitude" [agmFitBounds]="true">
       <agm-info-window #window>
         <h6>{{ events[i].venue_name }}</h6>
-        <a href="{{events[i].url}}" target="_blank" > Event Details </a>
+        <span (click)="toEventPage(events[i])" class="btn btn-submit"> Event Details </span>
       </agm-info-window>
     </agm-marker> 
   </agm-map>

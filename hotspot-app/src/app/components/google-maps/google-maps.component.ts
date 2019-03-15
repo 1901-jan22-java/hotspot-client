@@ -5,11 +5,13 @@ import { GoogleMapsAPIWrapper, AgmMap, LatLngBounds, LatLngBoundsLiteral} from '
 import { MapsService } from '../../services/maps.service';
 import { EventService } from 'src/app/services/event.service';
 import { Event } from 'src/app/models/Event';
+import { Router } from '@angular/router';
 import { Events } from 'src/app/models/Events';
 import { EventWrapper } from 'src/app/models/EventWrapper';
 import { SportsService } from '../../services/sports.service';
 import { nightLifeService } from '../../services/nightLife.service';
 import { ConcertsService } from '../../services/concerts.service';
+//import { Router } from 'express';
 
 
 declare const google: any;
@@ -45,7 +47,9 @@ export class GoogleMapsComponent implements OnInit{
 
   @ViewChild('AgmMap') agmMap: AgmMap;
 
-  constructor(private map: MapsService, private es: EventService, private ss: SportsService, private nl: nightLifeService, private cl: ConcertsService ){}
+  constructor(private map: MapsService, private es: EventService, private ss: SportsService, private nl: nightLifeService, private cl: ConcertsService, private router: Router ){}
+
+  category: string;
 
   ngOnInit(){
     this.map.getLocation().subscribe(data => {
@@ -139,7 +143,7 @@ export class GoogleMapsComponent implements OnInit{
           this.events = this.event_list.events.event;
           this.events.push({ 
             id: "", 
-            category: "",
+            category: "Festival",
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -166,6 +170,7 @@ export class GoogleMapsComponent implements OnInit{
             description: "" 
           });
           console.log(this.events);
+          this.category="Festival";
         } else {
           console.error('Error loading events');
         }
@@ -181,7 +186,7 @@ export class GoogleMapsComponent implements OnInit{
           this.events = this.event_list.events.event;
           this.events.push({ 
             id: "", 
-            category: "",
+            category: "Sports",
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -208,6 +213,7 @@ export class GoogleMapsComponent implements OnInit{
             description: "" 
           });
           console.log(this.events);
+          this.category="Sports";
         } else {
           console.error('Error loading events');
         }
@@ -223,7 +229,7 @@ export class GoogleMapsComponent implements OnInit{
           this.events = this.event_list.events.event;
           this.events.push({ 
             id: "", 
-            category: "",
+            category: "Nightlife",
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -250,6 +256,7 @@ export class GoogleMapsComponent implements OnInit{
             description: "" 
           });
           console.log(this.events);
+          this.category="Nightlife";
         } else {
           console.error('Error loading events');
         }
@@ -265,7 +272,7 @@ export class GoogleMapsComponent implements OnInit{
           this.events = this.event_list.events.event;
           this.events.push({ 
             id: "", 
-            category: "",
+            category: "Concert",
             postalCode: this.postalCode, 
             latitude: this.lat, 
             longitude: this.lng, 
@@ -292,11 +299,28 @@ export class GoogleMapsComponent implements OnInit{
             description: "" 
           });
           console.log(this.events);
+          this.category="Concerts";
         } else {
           console.error('Error loading events');
         }
       }
     );
+  }
+
+  toEventPage(event: Event){
+    console.log("To event page called");
+    console.log(event);
+    let navigationExtras = {
+      queryParams: {
+        "event_id": event.id,
+        "category" : this.category,
+        "latitude": event.latitude,
+        "longitude": event.longitude,
+        "radius": "25",
+        "timeframe": "This Weekend"
+      }
+    };
+    this.router.navigate(['/eventpage'], navigationExtras);
   }
 
   labelOptions = {

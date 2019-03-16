@@ -45,7 +45,12 @@ export class ConcertsService {
     Object.keys(data).forEach(function (key){
       params = params.set('app_key', '')
       .set('location', data)
-      .set('category', 'music');
+      .set('q', 'Concert')
+      .set("date","future")
+      .set("page_size","20")
+      .set("within", "25")
+      .set("t", "ThisWeekend")
+      .set("sort_order","popularity");
     });
       
     return this.http.get<EventWrapper>(this.url, {params});

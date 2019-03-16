@@ -1,0 +1,70 @@
+img{
+    border: 10px, black;
+    float: right;
+    width: 80%;
+    height:auto;
+    
+}
+
+#wrapper {
+    padding-top: 10px;
+}
+
+.container-fluid {
+    background: #3E78B2;
+}
+
+#text-col {
+    align-content: flex-start;
+}
+
+a {
+    color: white;
+    font-family: Montserrat;
+}
+
+a:hover {
+    color: #C0392B;
+}
+
+
+h1{
+    font-family: Montserrat;
+    color: white;
+    padding-bottom: 20px;
+}
+
+h6 {
+    font-family: Montserrat;
+    color: white;
+}
+
+h5 {
+    font-family: Montserrat;
+    color: white;
+    
+}
+
+p {
+    font-family: Montserrat;
+    color: #60B0F4;
+    font-size: 12pt;
+}
+
+.btn {
+    background: #C0392B;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #C0392B;
+}
+
+
+agm-map {
+    height: 200px;
+    width: 300px;
+}
+

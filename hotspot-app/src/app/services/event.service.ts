@@ -16,18 +16,12 @@ const headers = new HttpHeaders()
 
 import { Event } from '../models/Event';
 
-const params = new HttpParams()
-  .set('app_key', 'cKxPsB44vwSF3z42')
-  .set('location', 'San Diego')
-  .set('sort_order', 'popularity');
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
-  lat: number; 
-  lng: number;
+  lat: string; 
+  lng: string;
   postalCode: number;
   city: String;
   countryName: String;
@@ -39,20 +33,36 @@ export class EventService {
 
   constructor(private http: HttpClient, private ms: MapsService) { }
 
+  public getEvents(longitude:string,latitude:string,radius:string,category:string,timeFrame:string){
+     var cordsString= latitude+","+longitude;
+     console.log(cordsString);
+      const params = new HttpParams()
+      .set('app_key', 'cKxPsB44vwSF3z42')
+      .set("q",category)
+      .set('where', cordsString)
+      .set("date","future")
+      .set("page_size","20")
+      .set("within",radius)
+      .set("t",timeFrame)
+      .set("sort_order","popularity");
+      return this.http.get<EventWrapper>(this.url,{params});
  
-  public getEvents(){
-    return this.http.get<EventWrapper>(this.url, {params});
   }
 
 
   public getEventsByLocation(data: any){
    
     let params = new HttpParams();
-    Object.keys(data).forEach(function (key){
+    //Object.keys(data).forEach(function (key){
       params = params.set('app_key', 'cKxPsB44vwSF3z42')
       .set('location', data)
-      .set('category', 'festival_parades');
-    });
+      .set('q', 'Festival')
+      .set("date","future")
+      .set("page_size","20")
+      .set("within", "25")
+      .set("t", "This Weekend")
+      .set("sort_order","popularity");
+    //});
       
     return this.http.get<EventWrapper>(this.url, {params});
   }

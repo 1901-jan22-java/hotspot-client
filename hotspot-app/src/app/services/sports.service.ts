@@ -63,7 +63,7 @@ export class SportsService {
     Object.keys(data).forEach(function (key){
       params = params.set('app_key', 'cKxPsB44vwSF3z42')
       .set('location', data)
-      .set('category', 'sports');
+      .set('q', 'sports');
     });
       
     //params.set('location', <string>this.getRegion());

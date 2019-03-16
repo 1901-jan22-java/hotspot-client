@@ -38,7 +38,7 @@ export class nightLifeService {
     Object.keys(data).forEach(function (key){
       params = params.set('app_key', 'cKxPsB44vwSF3z42')
       .set('location', data)
-      .set('category', 'singles_social');
+      .set('q', 'Nightlife');
     });
       
     return this.http.get<EventWrapper>(this.url, {params});

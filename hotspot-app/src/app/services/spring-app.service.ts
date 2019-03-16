@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/User';
 import { Observable } from 'rxjs/observable';
 
@@ -12,7 +12,7 @@ export class SpringAppService {
   users: Observable<User[]>;
   user: Observable<User>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUsers() {
     return this.users = this.http.get<User[]>(this.BASE_URL + '/users');
@@ -20,6 +20,15 @@ export class SpringAppService {
 
   getUserByEmail(email: string) {
     return this.user = this.http.get<User>(this.BASE_URL + '/users/email=' + email);
+  }
+
+  addUser(user: User) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.user = this.http.post<User>(this.BASE_URL + '/users', user, httpOptions);
   }
 
 }

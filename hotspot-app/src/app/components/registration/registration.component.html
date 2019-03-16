@@ -5,40 +5,48 @@
   </p>
   <div class="container">
     <div class="row my-3">
+      <label class="col-2 pb-1">First Name:</label>
+      <input [(ngModel)]=fn class="col-10 form-control" name="firstname">
+    </div>
+    <div class="row mb-3">
+      <label class="col-2 pb-1">First Name:</label>
+      <input [(ngModel)]=ln class="col-10 form-control" name="lastname">
+    </div>
+    <div class="row mb-3">
       <label class="col-2 pb-1">Email</label>
       <input [(ngModel)]=email class="col-10 form-control" name="email" placeholder="We'll never give your email out to 3rd Parties~">
     </div>
     <div class="row mb-5">
       <label class="col-2 pb-1">Password</label>
-      <input [(ngModel)]=password type="password" class="col-10 form-control" name="password" placeholder="Hopefully something secure & easy to remember!">
+      <input [(ngModel)]=pw type="password" class="col-10 form-control" name="password" placeholder="Hopefully something secure & easy to remember!">
     </div>
     <div class="row ml-1 mb-3">
       <h3>Set your preferences:</h3>
     </div>
     <div class="row mb-5">
       <div class="form-check col-3">
-          <input (change)="addPreference(1)" class="form-check-input" id="inputOne" type="checkbox" value="1">
+          <input (change)="modPreference(1)" class="form-check-input" id="inputOne" type="checkbox" value="1">
           <label for="inputOne" class="form-check-label">
             <p class="img-label text-center">Concerts</p>
             <img class="pref-img" [src]="'assets/images/concert.jpg'" alt="image">
           </label>
       </div>
       <div class="form-check col-3">
-        <input (change)="addPreference(2)" class="form-check-input" id="inputTwo" type="checkbox" value="2">
+        <input (change)="modPreference(2)" class="form-check-input" id="inputTwo" type="checkbox" value="2">
         <label for="inputTwo" class="form-check-label">
             <p class="img-label text-center">Festivals</p>
             <img class="pref-img" [src]="'assets/images/festival.jpg'" alt="image">
         </label>
       </div>
       <div class="form-check col-3">
-        <input (change)="addPreference(3)" class="form-check-input" id="inputThree" type="checkbox" value="3">
+        <input (change)="modPreference(3)" class="form-check-input" id="inputThree" type="checkbox" value="3">
         <label for="inputThree" class="form-check-label">
             <p class="img-label text-center">Sports</p>
             <img class="pref-img" [src]="'assets/images/sports.jpg'" alt="image">
         </label>
       </div>
       <div class="form-check col-3">
-        <input (change)="addPreference(4)" class="form-check-input" id="inputFour" type="checkbox" value="4">
+        <input (change)="modPreference(4)" class="form-check-input" id="inputFour" type="checkbox" value="4">
         <label for="inputFour" class="form-check-label">
             <p class="img-label text-center">Nightlife</p>
             <img class="pref-img" [src]="'assets/images/nightlife.jpg'" alt="image">

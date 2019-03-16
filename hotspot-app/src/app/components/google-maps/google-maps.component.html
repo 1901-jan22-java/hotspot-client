@@ -1,45 +1,28 @@
 <p>
-  <!-- <h1> Google Maps Dispay</h1> -->
 </p>
-<h1 class = "Jumbotron">Stadiums Near You ! </h1>
-<!-- <div #gmap style="width:100%;height:400px"></div> -->
-<!-- <agm-map [latitude] = 'lat' [longitude] = 'lng' >
-  <agm-marker [latitude] = 'latitude' [longitude] = 'longitude' > </agm-marker> 
-  <agm-marker  [latitude]="lat" [longitude]="lng" [label]="labelOptions">
-    </agm-marker> </agm-map>  -->
+<em><h1 style="text-align:center;color:#60B0F4"  class = "Jumbotron" >Check Out Our Events</h1></em>
 
-    
- 
-    <agm-map #AgmMap [latitude] = 'lat' [longitude] = 'lng' (idle) = "mapIdle()" [fitBounds]="true">
- 
-        <agm-marker (mouseOver)="window.open()" (mouseOut)="window.close()" *ngFor = "let coords of myCoords; let i = index" [latitude] = "coords.latitude" [longitude] = "coords.longitude" [agmFitBounds]="true">
-         
-        <agm-info-window #window>
-         
-        <h6>{{ myCoords[i].EventName }}</h6>
-         
-        </agm-info-window>
-         
-        </agm-marker> 
-         
-        <agm-marker  [latitude] = 'lat' [longitude] = 'lng' >
-            <!-- [label] = 'labelOptions' -->
-            <!-- (mouseOver)="window.open()" (mouseOut)="window.close()" -->
-        <agm-info-window #window>
-         
-        <!-- <h6>Longitude: {{ lng }}</h6>
-         
-        <h6>Latitude: {{ lat }}</h6> -->
-         
-        </agm-info-window>
-         
-        </agm-marker>
-         
-        </agm-map>
-         
 
-  <!-- <agm-map [latitude]="lat" [longitude]="lng"> 
-      <agm-marker [latitude]="lat" [longitude]="lng">
-       </agm-marker>  -->
 
-  <!-- (mapClick)="OnL($event)" -->
+
+  <agm-map [zoom] = "1" #AgmMap [latitude] = 'lat' [longitude] = 'lng' (mapReady) = "mapReady($event)" [fitBounds]="true">
+    <button  class="btn btn-danger" id = "festivals" (click) = "festivalClicked()"> Festivals
+    </button>
+    <button class="btn btn-success"id = "sports"  (click) = "sportsClicked()"> Sports
+    </button>
+    <button class="btn btn-dark" id = "nights"  (click) = "nightClicked()"> Night Life
+    </button>
+    <button class="btn btn-primary" id = "concerts"  (click) = "nightClicked()"> Concerts
+    </button>
+    <agm-marker  [latitude] = 'lat' [longitude] = 'lng'[label]="labelOptions" [agmFitBounds]="true">
+    </agm-marker>
+    <agm-marker (markerClick)="window.open()" (markerClick)="window.close()" *ngFor = "let coords of events; let i = index" [latitude] = "coords.latitude" [longitude] = "coords.longitude" [agmFitBounds]="true">
+      <agm-info-window #window>
+        <h6>{{ events[i].venue_name }}</h6>
+        <span (click)="toEventPage(events[i])" class="btn btn-submit"> Event Details </span>
+      </agm-info-window>
+    </agm-marker> 
+  </agm-map>
+
+
+  

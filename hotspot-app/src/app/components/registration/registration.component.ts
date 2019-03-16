@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpringAppService } from 'src/app/services/spring-app.service';
 import { User } from 'src/app/models/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -17,7 +18,10 @@ export class RegistrationComponent implements OnInit {
   pw: string;
   pref: number[] = [0, 0, 0, 0];
 
-  constructor(private saService: SpringAppService) { }
+  constructor(
+    private saService: SpringAppService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     const images = document.querySelectorAll('.pref-img');
@@ -53,15 +57,11 @@ export class RegistrationComponent implements OnInit {
           alert('Woops! That email is already in use.\nSure you don\'t already have an account?');
         } else {
           const user = new User(this.fn, this.ln, this.email, this.pw, this.pref.toString());
-          // user.fn = this.fn;
-          // user.ln = this.ln;
-          // user.email = this.email;
-          // user.password = this.pw;
-          // user.pref = this.pref.toString();
           this.saService.addUser(user).subscribe(
             createUserResp => {
               if (createUserResp != null) {
                 alert('Account Creation Succeeded!');
+                this.router.navigate([`/login`]);
               } else {
                 alert('Account Creation failed! Please try again.');
               }

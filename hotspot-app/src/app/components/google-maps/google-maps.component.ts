@@ -136,7 +136,7 @@ export class GoogleMapsComponent implements OnInit{
   }
 
   getEvents(){
-    this.es.getEventsByLocation(this.region).subscribe(
+    this.es.getEvents(this.lng.toString(), this.lat.toString(), "25", "Festival", "This Weekend").subscribe(
       resp => {console.log(resp);
         if (resp != null){
           this.event_list = resp;
@@ -179,7 +179,7 @@ export class GoogleMapsComponent implements OnInit{
   }
 
   getSports(){
-    this.ss.getEvents(this.region).subscribe(
+    this.es.getEvents(this.lng.toString(), this.lat.toString(), "25", "Sports", "This Weekend").subscribe(
       resp => {
         if (resp != null){
           this.event_list = resp;
@@ -222,7 +222,7 @@ export class GoogleMapsComponent implements OnInit{
   }
 
   getNight(){
-    this.nl.getEvents(this.region).subscribe(
+    this.es.getEvents(this.lng.toString(), this.lat.toString(), "25", "NightLife", "This Weekend").subscribe(
       resp => {
         if (resp != null){
           this.event_list = resp;
@@ -265,7 +265,7 @@ export class GoogleMapsComponent implements OnInit{
   }
 
   getConcerts(){
-    this.cl.getEvents(this.region).subscribe(
+    this.es.getEvents(this.lng.toString(), this.lat.toString(), "25", "Concert", "This Weekend").subscribe(
       resp => {
         if (resp != null){
           this.event_list = resp;

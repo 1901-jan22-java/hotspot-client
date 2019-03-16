@@ -53,11 +53,16 @@ export class EventService {
   public getEventsByLocation(data: any){
    
     let params = new HttpParams();
-    Object.keys(data).forEach(function (key){
+    //Object.keys(data).forEach(function (key){
       params = params.set('app_key', 'cKxPsB44vwSF3z42')
       .set('location', data)
-      .set('category', 'festival_parades');
-    });
+      .set('q', 'Festival')
+      .set("date","future")
+      .set("page_size","20")
+      .set("within", "25")
+      .set("t", "This Weekend")
+      .set("sort_order","popularity");
+    //});
       
     return this.http.get<EventWrapper>(this.url, {params});
   }

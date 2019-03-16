@@ -45,7 +45,7 @@ export class ConcertsService {
     Object.keys(data).forEach(function (key){
       params = params.set('app_key', '')
       .set('location', data)
-      .set('category', 'Concert')
+      .set('q', 'Concert')
       .set("date","future")
       .set("page_size","20")
       .set("within", "25")

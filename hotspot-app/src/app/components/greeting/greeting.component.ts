@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SpringAppService } from 'src/app/services/spring-app.service';
-import { User } from 'src/app/models/User';
-
 
 @Component({
   selector: 'app-greeting',
@@ -10,23 +7,9 @@ import { User } from 'src/app/models/User';
 })
 export class GreetingComponent implements OnInit {
 
-  users: User[];
-
-  constructor(private saService: SpringAppService) {}
+  constructor() {}
 
   ngOnInit() {
-  }
-
-  getAllUsers() {
-    this.saService.getUsers().subscribe(
-      resp => {
-        if (resp != null){
-          this.users = resp;
-        } else {
-          console.error('Error loading events');
-        }
-      }
-    );
   }
 
 }

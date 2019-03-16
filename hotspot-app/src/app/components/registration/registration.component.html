@@ -1,31 +1,52 @@
 <div class="enclosure py-5">
-  <h1 class="text-center">Totally Basic Registration Form</h1>
+  <h1 class="text-center">Registration Form</h1>
   <p class="text-center pb-1">
-    Ez-Pz Lemon Squeezy!
+    Make your account to get recommendations and save your preferences!
   </p>
   <div class="container">
-    <div class="row">
-      <label class="col-2 pb-1">Username</label>
-      <input class="col-10 form-control" name="username" placeholder="Preferably something meaningful and easy to remember =D">
-    </div>
     <div class="row my-3">
       <label class="col-2 pb-1">Email</label>
-      <input class="col-10 form-control" name="email" placeholder="We'll never give your email out to 3rd Parties!">
+      <input [(ngModel)]=email class="col-10 form-control" name="email" placeholder="We'll never give your email out to 3rd Parties~">
     </div>
-    <div class="row mb-3">
+    <div class="row mb-5">
       <label class="col-2 pb-1">Password</label>
-      <input type="password" class="col-10 form-control" name="password" placeholder="Hopefully something secure & easy to remember!">
+      <input [(ngModel)]=password type="password" class="col-10 form-control" name="password" placeholder="Hopefully something secure & easy to remember!">
     </div>
-    <div class="row mb-4">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          I did what all shady websites do and made the checkbox so astronomically small
-        that you wouldn't think to check it off to opt out of some weirdness.</label>
+    <div class="row ml-1 mb-3">
+      <h3>Set your preferences:</h3>
+    </div>
+    <div class="row mb-5">
+      <div class="form-check col-3">
+          <input (change)="addPreference(1)" class="form-check-input" id="inputOne" type="checkbox" value="1">
+          <label for="inputOne" class="form-check-label">
+            <p class="img-label text-center">Concerts</p>
+            <img class="pref-img" [src]="'assets/images/concert.jpg'" alt="image">
+          </label>
+      </div>
+      <div class="form-check col-3">
+        <input (change)="addPreference(2)" class="form-check-input" id="inputTwo" type="checkbox" value="2">
+        <label for="inputTwo" class="form-check-label">
+            <p class="img-label text-center">Festivals</p>
+            <img class="pref-img" [src]="'assets/images/festival.jpg'" alt="image">
+        </label>
+      </div>
+      <div class="form-check col-3">
+        <input (change)="addPreference(3)" class="form-check-input" id="inputThree" type="checkbox" value="3">
+        <label for="inputThree" class="form-check-label">
+            <p class="img-label text-center">Sports</p>
+            <img class="pref-img" [src]="'assets/images/sports.jpg'" alt="image">
+        </label>
+      </div>
+      <div class="form-check col-3">
+        <input (change)="addPreference(4)" class="form-check-input" id="inputFour" type="checkbox" value="4">
+        <label for="inputFour" class="form-check-label">
+            <p class="img-label text-center">Nightlife</p>
+            <img class="pref-img" [src]="'assets/images/nightlife.jpg'" alt="image">
+        </label>
       </div>
     </div>
     <div class="text-center">
-        <button type="button" class="btn btn-danger btn-lg">Make My Account!</button>
+        <button (click)="checkEmail()" type="button" class="btn btn-danger btn-lg">Make My Account!</button>
     </div>
   </div>
 </div>

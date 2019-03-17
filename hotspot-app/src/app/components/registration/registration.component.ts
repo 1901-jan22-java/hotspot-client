@@ -56,7 +56,7 @@ export class RegistrationComponent implements OnInit {
           console.log(this.user);
           alert('Woops! That email is already in use.\nSure you don\'t already have an account?');
         } else {
-          const user = new User(this.fn, this.ln, this.email, this.pw, this.pref.toString());
+          const user = new User(this.fn, this.ln, this.pw, this.email, this.pref.toString());
           this.saService.addUser(user).subscribe(
             createUserResp => {
               if (createUserResp != null) {

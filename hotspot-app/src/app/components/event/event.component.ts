@@ -104,7 +104,7 @@ export class EventComponent implements OnInit {
     //clears the table if it has contents
     if(this.events != undefined){this.events.length=0;}
     this.loadedTable = true;
-    this.search ++;
+    //this.search ++;
     this.getCords();
   }
   getCords() {
@@ -155,6 +155,8 @@ export class EventComponent implements OnInit {
           //   console.log(this.events[i].category);
           // }
           console.log(this.events);
+          this.search++;
+          console.log(this.search);
           if (this.search > 1){
             this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
               // Destroy the table first

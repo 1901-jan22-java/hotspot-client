@@ -9,19 +9,19 @@
         <h5>{{event.title}}</h5>
         <p>{{event.start_time | date:'fullDate'}}
         <br>{{event.start_time | date:'shortTime'}}</p>
-        <p style="font-size: 10pt; text-indent: 10px; color: white">{{event.description}}</p>
+        <div style="font-size: 10pt; text-indent: 10px; color: white" [innerHTML] = "event.description"></div>
         <br>
         <p style= "color: white">{{event.venue_name}}<p>
         <p style="font-size: 11pt">{{event.venue_address}} <br>
         {{event.city_name}} {{event.postal_code}}</p>
-        <a *ngIf="music" style="margin-bottom: 20px" href="http://www.ticketmaster.com/search?q={{event.title}}" class="btn btn-outline">Find Tickets!</a>
+        <a *ngIf="music" style="margin-bottom: 20px" href="http://www.ticketmaster.com/search?q={{event.title}}" target="_blank" class="btn btn-outline">Find Tickets!</a>
         
       </div>  
       <div class="col-3">
         <h5>Links:</h5>
-        <a href={{event.url}}>Link to Event Website</a>
+        <a href={{event.url}} target="_blank">Link to Event Website</a>
         <br>
-        <a href={{event.venue_url}}>Link to Venue </a>
+        <a href={{event.venue_url}} target="_blank">Link to Venue </a>
       </div>
       <div class="col-3">
         <h6>Get Directions To HotSpot:</h6> 
@@ -30,7 +30,7 @@
             <agm-direction [origin]="origin" [destination]="destination">
             </agm-direction>
           </agm-map>
-          <a id="directions" href="http://maps.google.com/?q={{event.venue_address}}" class="btn btn-outline">Click Here</a>
+          <a id="directions" href="http://maps.google.com/?q={{event.venue_address}}" target="_blank" class="btn btn-outline">Click Here</a>
           </p>
       </div>
     </div>

@@ -1,10 +1,10 @@
 export class User {
 
     constructor(
-        ln: string, fn: string, pw: string, email: string, pref: string
+        fn: string, ln: string, pw: string, email: string, pref: string
     ) {
-        this.ln = ln;
         this.fn = fn;
+        this.ln = ln;
         this.password = pw;
         this.email = email;
         this.pref = pref;

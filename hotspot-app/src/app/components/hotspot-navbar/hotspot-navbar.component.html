@@ -3,16 +3,16 @@
       <img [src]="'assets/images/brand.png'" alt="image">
     </a>
     <div class="collapse navbar-collapse">
+        <span class="navbar-text ml-3">
+            Find weekend venues and fun here!  
+        </span>
         <ul class="navbar-nav ml-auto">
-          <span class="navbar-text mr-3">
-              Wanna find cool hangouts quick? . . . 
-          </span>
-          <li class="nav-item">
+          <li class="nav-item ml-3">
+            <button routerLink="/event" class="btn btn-lg btn-outline-danger" type="button">Search</button>
+          </li>
+          <li class="nav-item mx-3">
             <button routerLink="/login" class="btn btn-lg btn-outline-danger" type="button">Login</button>
           </li>
-          <span class="navbar-text mx-3">
-            OR
-          </span>
           <li class="nav-item">
               <button routerLink="/register" class="btn btn-lg btn-outline-danger" type="button">Register</button>
           </li>

@@ -1,0 +1,31 @@
+.container-fluid {
+    background:#3E78B2;
+}
+
+.row{
+    padding-top: 10px;
+}
+
+#search {
+    font-family: Montserrat;
+    width: 100%;
+}
+
+input{
+    font-family: Montserrat;
+}
+
+#radius{
+    float: left;
+}
+
+.btn {
+    background: #C0392B;
+    padding: 10px;
+    margin: 10px;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #C0392B;
+}

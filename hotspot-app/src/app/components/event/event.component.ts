@@ -22,6 +22,7 @@ export class EventComponent implements OnInit {
   event_list: EventWrapper;
   events : Event[];
   dtTrigger: Subject<Event> = new Subject();
+  loadedTable: boolean;
 
   constructor(private eService: EventService, private geoService:GeolocationService, private router : Router) {}
   //search Filtering variables
@@ -39,7 +40,7 @@ export class EventComponent implements OnInit {
   ngOnInit() {
     console.log("IN EVENT COMPONENT onInit");
     this.dummyEventfulCall();
-    this.dtTrigger.next();
+    //this.dtTrigger.next();
   };
 
   dummyEventfulCall(){
@@ -56,7 +57,6 @@ export class EventComponent implements OnInit {
           this.events = this.event_list.events.event;
           this.events.length=0;
           console.log(this.events);
-          //this.dtTrigger.next();
         } 
         // else {
         //   this.events =this.event_list.events.event;
@@ -71,6 +71,7 @@ export class EventComponent implements OnInit {
     console.log("in load table");
     //clears the table if it has contents
     if(this.events != undefined){this.events.length=0;}
+    this.loadedTable = true;
     this.getCords();
   }
   getCords(){
@@ -121,6 +122,7 @@ export class EventComponent implements OnInit {
           //   console.log(this.events[i].category);
           // }
           console.log(this.events);
+          this.dtTrigger.next();
           } 
         }
         else {

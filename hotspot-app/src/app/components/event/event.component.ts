@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';
 import { Event } from 'src/app/models/Event';
 import { EventWrapper } from 'src/app/models/EventWrapper';
 import { Subject } from 'rxjs';
+import { DataTableDirective } from 'angular-datatables';
 
 import { GeolocationService } from 'src/app/services/geolocation.service';
 import { getClosureSafeProperty } from '@angular/core/src/util/property';
@@ -29,6 +30,11 @@ export class EventComponent implements OnInit {
   events: Event[];
   dtTrigger: Subject<Event> = new Subject();
   loadedTable: boolean;
+  preferencesCollapsed: boolean = true;
+  timeframeCollapsed : boolean = true;
+
+  @ViewChild(DataTableDirective)
+  dtElement: DataTableDirective;
 
   constructor(
     private eService: EventService,
@@ -46,9 +52,11 @@ export class EventComponent implements OnInit {
   timeFrame = 'This Weekend'; // default option
   longitude: string;
   latitude: string;
+  search: number = 0;
 
   ngOnInit() {
     console.log('IN EVENT COMPONENT onInit');
+    this.dummyEventfulCall();
     this.user = this.waService.user;
     this.fn = this.user.fn;
     this.ln = this.user.ln;
@@ -62,7 +70,7 @@ export class EventComponent implements OnInit {
         case 4: this.checkNightlife = true; break;
       }
     }
-    this.dummyEventfulCall();
+    
     //this.dtTrigger.next();
   };
 
@@ -81,20 +89,22 @@ export class EventComponent implements OnInit {
           this.events = this.event_list.events.event;
           this.events.length = 0;
           console.log(this.events);
-        } 
+        } else {
         // else {
         //   this.events =this.event_list.events.event;
         //   this.events.length=0;
         // }
           console.error('Error loading events');
         }
-      );
+      });
   }
+
   loadTable(){
     console.log("in load table");
     //clears the table if it has contents
     if(this.events != undefined){this.events.length=0;}
     this.loadedTable = true;
+    this.search ++;
     this.getCords();
   }
   getCords() {
@@ -145,7 +155,15 @@ export class EventComponent implements OnInit {
           //   console.log(this.events[i].category);
           // }
           console.log(this.events);
-          this.dtTrigger.next();
+          if (this.search > 1){
+            this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+              // Destroy the table first
+              dtInstance.destroy();
+              // Call the dtTrigger to rerender again
+              this.dtTrigger.next();
+            });
+          } else {this.dtTrigger.next();}
+    
           } 
         }
         else {

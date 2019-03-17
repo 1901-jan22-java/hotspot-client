@@ -3,20 +3,47 @@
 }
 
 h1 {
-    font-family: Montserrat;
+    font-family: montserrat;
     font-size: 64px;
     color: white;
 }
 
-p, .form-check-label {
+p {
     font-family: lato;
-    font-size: 12px;
+    font-size: 16px;
     color: white;
 }
 
-.form-check-inline {
-    display: relative;
-    margin-left: 190px;
+.form-check-input {
+    visibility: hidden;
+}
+
+.img-label {
+    font-family: lobster;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    bottom: -20px;
+}
+
+h3 {
+    font-family: Montserrat;
+    font-size: 32px;
+    color: white;
+}
+
+.pref-img {
+    height: 150px;
+    width: 150px;
+    opacity: 0.8;
+}
+
+.pref-img:hover {
+    opacity: 1;
+}
+
+.selected {
+    opacity: 1;
 }
 
 .container {

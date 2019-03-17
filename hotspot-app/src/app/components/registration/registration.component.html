@@ -1,32 +1,60 @@
 <div class="enclosure py-5">
-  <h1 class="text-center">Totally Basic Registration Form</h1>
+  <h1 class="text-center">Registration Form</h1>
   <p class="text-center pb-1">
-    Ez-Pz Lemon Squeezy! <del>BecauseSomeoneIsTooDarnLazyToMakeSomethingSubstantial</del>
+    Make your account to get recommendations and save your preferences!
   </p>
   <div class="container">
-    <div class="row">
-      <label class="col-2 pb-1">Username</label>
-      <input class="col-10 form-control" name="username" placeholder="10 bucks says you'll come up with the edgiest name ever.">
-    </div>
     <div class="row my-3">
-      <label class="col-2 pb-1">Email</label>
-      <input class="col-10 form-control" name="username" placeholder="We won't spam you or sell it to third-party advertisers. Promise!">
+      <label class="col-2 pb-1">First Name:</label>
+      <input [(ngModel)]=fn class="col-10 form-control" name="firstname">
     </div>
     <div class="row mb-3">
-      <label class="col-2 pb-1">Password</label>
-      <input type="password" class="col-10 form-control" name="password" placeholder="Make a ridiculous password using this comic as inspiration: https://www.xkcd.com/936/">
+      <label class="col-2 pb-1">First Name:</label>
+      <input [(ngModel)]=ln class="col-10 form-control" name="lastname">
     </div>
-    <div class="row mb-4">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          I did what all shady websites do and made the checkbox so astronomically small
-        that you wouldn't think to check it off to opt out of some weirdness.</label>
+    <div class="row mb-3">
+      <label class="col-2 pb-1">Email</label>
+      <input [(ngModel)]=email class="col-10 form-control" name="email" placeholder="We'll never give your email out to 3rd Parties~">
+    </div>
+    <div class="row mb-5">
+      <label class="col-2 pb-1">Password</label>
+      <input [(ngModel)]=pw type="password" class="col-10 form-control" name="password" placeholder="Hopefully something secure & easy to remember!">
+    </div>
+    <div class="row ml-1 mb-3">
+      <h3>Set your preferences:</h3>
+    </div>
+    <div class="row mb-5">
+      <div class="form-check col-3">
+          <input (change)="modPreference(1)" class="form-check-input" id="inputOne" type="checkbox" value="1">
+          <label for="inputOne" class="form-check-label">
+            <p class="img-label text-center">Concerts</p>
+            <img class="pref-img" [src]="'assets/images/concert.jpg'" alt="image">
+          </label>
+      </div>
+      <div class="form-check col-3">
+        <input (change)="modPreference(2)" class="form-check-input" id="inputTwo" type="checkbox" value="2">
+        <label for="inputTwo" class="form-check-label">
+            <p class="img-label text-center">Festivals</p>
+            <img class="pref-img" [src]="'assets/images/festival.jpg'" alt="image">
+        </label>
+      </div>
+      <div class="form-check col-3">
+        <input (change)="modPreference(3)" class="form-check-input" id="inputThree" type="checkbox" value="3">
+        <label for="inputThree" class="form-check-label">
+            <p class="img-label text-center">Sports</p>
+            <img class="pref-img" [src]="'assets/images/sports.jpg'" alt="image">
+        </label>
+      </div>
+      <div class="form-check col-3">
+        <input (change)="modPreference(4)" class="form-check-input" id="inputFour" type="checkbox" value="4">
+        <label for="inputFour" class="form-check-label">
+            <p class="img-label text-center">Nightlife</p>
+            <img class="pref-img" [src]="'assets/images/nightlife.jpg'" alt="image">
+        </label>
       </div>
     </div>
     <div class="text-center">
-        <button type="button" class="btn btn-danger btn-lg">Make My Account!</button>
+        <button (click)="checkEmail()" type="button" class="btn btn-danger btn-lg">Make My Account!</button>
     </div>
-    <div id="error_message"></div>
   </div>
 </div>

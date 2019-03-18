@@ -1,0 +1,44 @@
+.container-fluid {
+    background:#3E78B2;
+}
+
+h6 {
+    color: white;
+}
+
+.row{
+    padding-top: 10px;
+}
+
+#search {
+    font-family: Montserrat;
+    width: 100%;
+}
+
+input{
+    font-family: Montserrat;
+}
+
+label{
+    font-family: Montserrat;
+    color: #707070;
+}
+
+#radius{
+    float: left;
+    font-family: Montserrat;
+}
+
+.btn {
+    background: #C0392B;
+    padding: 10px;
+    margin: 10px;
+    font-family: Montserrat;
+    color: white;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #C0392B;
+}
+

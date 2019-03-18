@@ -33,9 +33,6 @@ export class EventpageComponent implements OnInit {
     this.sub = this.route.queryParams.subscribe(params =>
       { let id = params["event_id"];
         let category = params["category"];
-        let LL = +params.latitude
-        let yy = +params.longitude
-        this.destination = {lat: LL,lng:yy };
         let latitude = params["latitude"];
         let LL = +params.latitude;
         let YY =+params.longitude;

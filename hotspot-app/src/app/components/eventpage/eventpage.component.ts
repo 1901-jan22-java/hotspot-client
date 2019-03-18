@@ -33,6 +33,9 @@ export class EventpageComponent implements OnInit {
     this.sub = this.route.queryParams.subscribe(params =>
       { let id = params["event_id"];
         let category = params["category"];
+        let LL = +params.latitude
+        let yy = +params.longitude
+        this.destination = {lat: LL,lng:yy };
         let latitude = params["latitude"];
         let longitude = params["longitude"];
         let timeframe = params["timeframe"];
@@ -64,6 +67,7 @@ export class EventpageComponent implements OnInit {
       this.countryName = data.country_name;
       this.countryAbbr = data.country;
       this.region = data.region;
+      this.origin = { lat: data.latitude,lng:data.longitude };
 
       this.events = [{ 
         id: "", 
@@ -95,8 +99,8 @@ export class EventpageComponent implements OnInit {
       }];
     })
     // this.origin = { lat:this.lat, lng:this.lng };
-    this.origin = { lat:40.6548, lng: -73.6097 };
-    this.destination = { lat: 40.7484, lng: -73.862 };
+    // this.origin = { lat:40.6548, lng: -73.6097 };
+    // this.destination = { lat: 40.7484, lng: -73.862 };
     // this.destination = { lat: 24.799524, lng: 120.975017 };
    console.log(this.lat); 
    console.log(this.lng); 

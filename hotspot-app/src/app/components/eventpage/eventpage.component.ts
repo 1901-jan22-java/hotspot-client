@@ -34,6 +34,9 @@ export class EventpageComponent implements OnInit {
       { let id = params["event_id"];
         let category = params["category"];
         let latitude = params["latitude"];
+        let LL = +params.latitude;
+        let YY =+params.longitude;
+        this.destination = {lat: LL, lng: YY}; 
         let longitude = params["longitude"];
         let timeframe = params["timeframe"];
         let radius = params["radius"];
@@ -59,6 +62,7 @@ export class EventpageComponent implements OnInit {
       //console.log(data); 
       this.lat = data.latitude; 
       this.lng = data.longitude;
+      this.origin ={lat:data.latitude, lng:data.longitude}; 
       this.postalCode = data.postal;
       this.city = data.city;
       this.countryName = data.country_name;
@@ -95,8 +99,8 @@ export class EventpageComponent implements OnInit {
       }];
     })
     // this.origin = { lat:this.lat, lng:this.lng };
-    this.origin = { lat:40.6548, lng: -73.6097 };
-    this.destination = { lat: 40.7484, lng: -73.862 };
+    // this.origin = { lat:40.6548, lng: -73.6097 };
+    // this.destination = { lat: 40.7484, lng: -73.862 };
     // this.destination = { lat: 24.799524, lng: 120.975017 };
    console.log(this.lat); 
    console.log(this.lng); 

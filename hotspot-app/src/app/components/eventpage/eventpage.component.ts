@@ -37,6 +37,9 @@ export class EventpageComponent implements OnInit {
         let yy = +params.longitude
         this.destination = {lat: LL,lng:yy };
         let latitude = params["latitude"];
+        let LL = +params.latitude;
+        let YY =+params.longitude;
+        this.destination = {lat: LL, lng: YY}; 
         let longitude = params["longitude"];
         let timeframe = params["timeframe"];
         let radius = params["radius"];
@@ -62,6 +65,7 @@ export class EventpageComponent implements OnInit {
       //console.log(data); 
       this.lat = data.latitude; 
       this.lng = data.longitude;
+      this.origin ={lat:data.latitude, lng:data.longitude}; 
       this.postalCode = data.postal;
       this.city = data.city;
       this.countryName = data.country_name;
